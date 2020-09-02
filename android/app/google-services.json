@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1024105803724",
+    "firebase_url": "https://getxtodo-b6ce3.firebaseio.com",
+    "project_id": "getxtodo-b6ce3",
+    "storage_bucket": "getxtodo-b6ce3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024105803724:android:47aab747f2e18d6c5f3769",
+        "android_client_info": {
+          "package_name": "com.example.getx_firestore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1024105803724-rtmj87283gj71gp4ms2jbgh17n80cr0v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWQ1vT7hEPdFaKWISXHgWVTT38vBmGn5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1024105803724-rtmj87283gj71gp4ms2jbgh17n80cr0v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
