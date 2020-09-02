@@ -10,15 +10,15 @@ class Todo {
     this.todo,
     this.todoId,
     this.createdAt,
-    this.finished,
+    this.finished
   );
 
   Todo.fromDocumentSnapshot(
-    DocumentSnapshot documentSnapshot,
+    DocumentSnapshot documentSnapshot
   ) {
     todoId = documentSnapshot.id;
-    todo = documentSnapshot.data()["todo"];
-    createdAt = documentSnapshot.data()["createdAt"];
-    finished = documentSnapshot.data()["finished"];
+    todo = documentSnapshot.data()['todo'];
+    createdAt = documentSnapshot.data()['createdAt'];
+    finished = documentSnapshot.data()['finished'];
   }
 }

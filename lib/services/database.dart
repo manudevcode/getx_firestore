@@ -4,9 +4,8 @@ import 'package:getx_firestore/models/todo.dart';
 class Database {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-
   Future<void> addTodo(String todo) async {
-    try {
+    try{
       await _firestore
         .collection('todos')
         .add({
@@ -14,13 +13,13 @@ class Database {
           'finished': false,
           'todo': todo
         });
-    } catch (e) {
-      print(e);
+    } catch (err) {
+      print(err);
       rethrow;
     }
   }
 
-  Future<void> finishTodo(Todo todo) async{
+  Future<void> finishTodo(Todo todo) async {
     try {
       await _firestore
         .collection('todos')
@@ -28,35 +27,35 @@ class Database {
         .update({
           'finished': !todo.finished
         });
-    } catch(e) { 
-      print(e);
+    } catch (err) {
+      print(err);
       rethrow;
     }
   }
 
-  Future<void> deleteTodo(DocumentSnapshot todo) async{
+  Future<void> deleteTodo(Todo todo) async {
     try {
       await _firestore
         .collection('todos')
-        .doc(todo.id)
+        .doc(todo.todoId)
         .delete();
-    } catch(e) { 
-      print(e);
+    } catch (err) {
+      print(err);
       rethrow;
     }
   }
 
-    Stream<List<Todo>> todoStream() {
+  Stream<List<Todo>> todoStream() {
     return _firestore
-        .collection("todos")
-        .orderBy("createdAt", descending: true)
-        .snapshots()
-        .map((QuerySnapshot query) {
-      List<Todo> retVal = List();
-      query.docs.forEach((element) {
-        retVal.add(Todo.fromDocumentSnapshot(element));
+      .collection('todos')
+      .orderBy('createdAt', descending: true)
+      .snapshots()
+      .map((QuerySnapshot query){
+        List<Todo> retVal = List();
+        query.docs.forEach((element) {
+          retVal.add(Todo.fromDocumentSnapshot(element));
+        });
+        return retVal;
       });
-      return retVal;
-    });
   }
 }

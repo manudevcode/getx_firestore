@@ -1,4 +1,4 @@
-import 'package:get/get.dart';
+import 'package:get/state_manager.dart';
 import 'package:getx_firestore/models/todo.dart';
 import 'package:getx_firestore/services/database.dart';
 
@@ -9,7 +9,6 @@ class TodoController extends GetxController {
 
   @override
   void onInit() {
-    todoList
-        .bindStream(Database().todoStream());
+    todoList.bindStream(Database().todoStream());
   }
 }
